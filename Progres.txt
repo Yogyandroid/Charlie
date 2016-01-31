@@ -1,1 +1,1 @@
-Ini adalah Proses Awalan
+Proses buat UI pertama
