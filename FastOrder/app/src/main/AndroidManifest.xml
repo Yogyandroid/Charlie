@@ -15,7 +15,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -25,16 +25,12 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Daftar"
             android:label="@string/title_activity_daftar"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Pendaftaran_Cafe"
-            android:label="@string/title_activity_pendaftaran__cafe"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -1,7 +1,5 @@
 package charlie.fastorder.com.fastorder;
 
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,50 +11,34 @@ import android.view.MenuItem;
 
 public class splash extends AppCompatActivity {
 
-    private static final int SPLASH_TIME = 800;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash);
-
-        new BackgroundTask().execute();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 
-    private class BackgroundTask extends AsyncTask {
-        Intent intent;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_splash, menu);
+        return true;
+    }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-            intent = new Intent(splash.this, Login.class);
-        }
-        @Override
-        protected Object doInBackground(Object[] params) {
-
-            /*  Use this method to load background
-            * data that your app needs. */
-
-            try {
-                Thread.sleep(SPLASH_TIME);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            return null;
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
 
-        @Override
-        protected void onPostExecute(Object o) {
-            super.onPostExecute(o);
-//            Pass your loaded data here using Intent
-
-//            intent.putExtra("data_key", "");
-            startActivity(intent);
-            finish();
-        }
+        return super.onOptionsItemSelected(item);
     }
 }
