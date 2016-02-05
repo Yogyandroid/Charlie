@@ -5,4 +5,6 @@
     <string name="masuk">MASUK KE FAST ORDER</string>
     <string name="user">Username</string>
     <string name="pass">Password</string>
+    <string name="title_activity_daftar">Daftar</string>
+    <string name="title_activity_pendaftaran__cafe">Pendaftaran_Cafe</string>
 </resources>
